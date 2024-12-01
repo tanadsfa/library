@@ -1,0 +1,34 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /uaa
+spring:
+  datasource:
+    url: 
+      jdbc:mysql://localhost:3306/db_example?useUnicode=true&character
+      Encoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 
+
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher # 主要修改这里
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# https://zhuanlan.zhihu.com/p/456266800
+demo1:
+  security:
+    permit-all-path:
+      - /auth/**
+      - /swagger-ui.html
+      - /webjars/**
+      - /swagger-resources/**
+      - /v2/*
+      - /csrf
